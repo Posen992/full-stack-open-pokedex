@@ -9,6 +9,7 @@
     "test": "jest",
     "test:report": "playwright show-report",
     "test:e2e": "playwright test",
+    "test:ui": "playwright test --ui",
     "eslint": "eslint './**/*.{js,jsx}'",
     "build": "webpack --mode production"
   },

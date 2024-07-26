@@ -34,3 +34,7 @@ jobs:
       - name: Check Health
         if: ${{ github.event_name == 'pull_request' }}
         run: curl https://full-stack-open-pokedex-urty.onrender.com/health
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

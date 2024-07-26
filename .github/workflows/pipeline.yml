@@ -32,10 +32,12 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         run: curl https://api.render.com/deploy/srv-${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
       - name: Check Health
-        if: ${{ github.event_name == 'pull_request' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         run: curl https://full-stack-open-pokedex-urty.onrender.com/health
       - name: Bump version and push tag
+        if: ${{ github.event_name == 'pull_request' }}
         uses: anothrNick/github-tag-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEFAULT_BUMP: patch
+

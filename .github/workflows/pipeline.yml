@@ -38,14 +38,13 @@
 #   tag_release:
 #     needs: [simple_deployment_pipeline]
 #     runs-on: ubuntu-20.04
-#     steps: 
+#     steps:
 #       - name: Bump version and push tag
 #         if: ${{ github.ref == 'refs/heads/main' }}
 #         uses: anothrNick/github-tag-action@v1
 #         env:
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #           DEFAULT_BUMP: patch
-
 
 name: Testing stuff
 
@@ -66,8 +65,10 @@ jobs:
       - name: commits
         env:
           COMMITS: ${{ toJson(github.event.commits) }}
-        run:  echo "$COMMITS"
-      - name:  commit messages
+        run: echo "$COMMITS"
+      - name: commit messages
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
+        if: ${{ contains('#skip',toJson(github.event.commits.*.message) )}}
         run: echo "$COMMIT_MESSAGES"
+        

@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - exercise_pull_request
+    pull_request:
+      branches: [main]      
+      types: [opened, synchronize]
 
 jobs:
   simple_deployment_pipeline:
@@ -30,6 +33,4 @@ jobs:
       - name: Check Health
         run: curl https://full-stack-open-pokedex-urty.onrender.com/health
 
-  pull_request:
-    branches: [main]      
-    types: [opened, synchronize]
+

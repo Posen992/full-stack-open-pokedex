@@ -46,7 +46,7 @@ jobs:
         if: failure() 
         with: 
           severity: error
-          details: Build failed!
+          details: Build failed
           webhookUrl: ${{ secrets.DISCORD_WEBHOOK }}
 
 

@@ -2,8 +2,9 @@ name: Health check schedule
 
 on:
   schedule:
-    - cron: '31 * * * *'
-    - cron: '32 * * * *'
+    - cron: '33 * * * *'
+    - cron: '34 * * * *'
+  workflow_dispatch: 
 
 jobs:
   health_check:

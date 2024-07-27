@@ -1,0 +1,13 @@
+name: Health check schedule
+
+on:
+  schedule:
+    - cron: '05 * * * *'
+    - cron: '06 * * * *'
+
+jobs:
+  health_check:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check Health
+        run: curl https://full-stack-open-pokedex-urty.onrender.com/health

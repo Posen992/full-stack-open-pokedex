@@ -1,0 +1,14 @@
+name: Health check schedule
+
+on:
+  schedule:
+    - cron: '11 * * * *'
+    - cron: '12 * * * *'
+
+jobs:
+  simple_deployment_pipeline:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check Health
+        if: ${{ github.event_name == 'pull_request' }}
+        run: curl https://full-stack-open-pokedex-urty.onrender.com/health

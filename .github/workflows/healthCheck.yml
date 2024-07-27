@@ -1,4 +1,4 @@
-name: Health check schedule
+name: Health check1
 
 # on:
 #   schedule:
@@ -13,7 +13,7 @@ name: Health check schedule
 
 on:
   schedule:
-    - cron: '14 18 * * *'
+    - cron: '17 18 * * *'
 
 jobs:
   test_schedule:

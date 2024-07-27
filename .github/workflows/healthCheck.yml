@@ -6,18 +6,11 @@ on:
       - '*'
 
 jobs:
-  hello_world_job_1:
+  health_check:
     runs-on: ubuntu-20.04
     steps:
-      - name: Say hello
-        run: |
-          echo "Hello World!"
-      - name: Now it is
-        run: |
-          date
-      - name: Directory content
-        run: |
-          ls -l
+      - name: Check Health
+        run: curl https://full-stack-open-pokedex-urty.onrender.com/health
 
 
 # name: Health check schedule

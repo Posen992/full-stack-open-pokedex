@@ -1,26 +1,27 @@
 name: Health check1
 
-# on:
-#   schedule:
-#     - cron: '10 * * * *'
-
-# jobs:
-#   health_check:
-#     runs-on: ubuntu-20.04
-#     steps:
-#       - name: Check Health
-#         run: curl https://full-stack-open-pokedex-urty.onrender.com/health
-
 on:
   schedule:
-    - cron: '26 18 * * *'
+    - cron: '30 12 * * *'
   workflow_dispatch:
 
 jobs:
-  test_schedule:
-    runs-on: ubuntu-latest
+  health_check:
+    runs-on: ubuntu-20.04
     steps:
-      - name: Not on Monday or Wednesday
-        run: echo "This step will be skipped on Monday and Wednesday"
-      - name: Every time
-        run: echo "This step will always run"
+      - name: Check Health
+        run: curl https://full-stack-open-pokedex-urty.onrender.com/health
+
+# on:
+#   schedule:
+#     - cron: '26 18 * * *'
+#   workflow_dispatch:
+
+# jobs:
+#   test_schedule:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Not on Monday or Wednesday
+#         run: echo "This step will be skipped on Monday and Wednesday"
+#       - name: Every time
+#         run: echo "This step will always run"

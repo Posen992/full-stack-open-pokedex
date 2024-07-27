@@ -1,8 +1,8 @@
-name: Health check1
+name: Health check
 
 on:
   schedule:
-    - cron: '30 12 * * *'
+    - cron: '00 19 * * *'
   workflow_dispatch:
 
 jobs:

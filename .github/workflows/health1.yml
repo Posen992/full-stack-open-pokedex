@@ -13,7 +13,8 @@ name: Health check1
 
 on:
   schedule:
-    - cron: '22 18 * * *'
+    - cron: '26 18 * * *'
+  workflow_dispatch:
 
 jobs:
   test_schedule:
